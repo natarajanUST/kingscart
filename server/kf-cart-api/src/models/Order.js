@@ -20,7 +20,7 @@ module.exports.getOrderDetailsById = async (orderId) => {
 }
 };
 
-module.exports.createNewOrder = async () => {
+module.exports.getAllOrderDetails = async () => {
     try {
         const orderRepo = AppDataSource.getRepository(OrderManagement);
         console.log(" DB Before orders", orderRepo);
