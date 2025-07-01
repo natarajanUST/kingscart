@@ -6,12 +6,18 @@ const Navbar = () => {
             <ul style={styles.navList}>
                 <li style={styles.navItem}>
                     <Link to="/" style={styles.navLink}>Home</Link>
-                </li>
+                </li>            
                 <li style={styles.navItem}>
                     <Link to="/about-us" style={styles.navLink}>About Us</Link>
                 </li>
                 <li style={styles.navItem}>
                     <Link to="/products" style={styles.navLink}>Products</Link>
+                </li>
+                <li style={styles.navItem}>
+                    <Link to="/cart" style={styles.navLink}>Cart</Link>
+                </li>
+                <li style={styles.navItem}>
+                    <Link to="/login" style={styles.navLink}>Login</Link>
                 </li>              
             </ul>
         </nav>
