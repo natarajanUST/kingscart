@@ -1,0 +1,11 @@
+{
+  "extends": "ts-config-single-spa",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "declarationDir": "dist",
+    "types": ["jest", "@testing-library/jest-dom"]
+  },
+  "files": ["src/kingscart-common.tsx"],
+  "include": ["src/**/*"],
+  "exclude": ["src/**/*.test*"]
+}

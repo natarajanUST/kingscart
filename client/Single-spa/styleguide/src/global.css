@@ -1,0 +1,81 @@
+:root {
+  --color-primary: #011627;
+  --color-secondary: #8b8c8a;
+  --color-danger: #e71d36;
+  --color-warning: #ff9f1c;
+  --color-info: #2ec4b6;
+  --color-background: rgba(253, 255, 252, 0.8);
+  --color-white: #fdfffc;
+  --color-black: #171817;
+  --color-overlay: rgba(253, 255, 252, 0.8);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+main {
+  padding: 20px;
+  min-height: 70vh;
+}
+
+header {
+  text-align: center;
+  border-bottom: 2px solid var(--color-primary);
+  height: 100px;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+}
+
+.banner {
+  text-align: center;
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.banner_title {
+  font-size: 2rem;
+  color: var(--color-primary);
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  background-color: #fdfffc;
+  padding: 20px;
+  border: 2px solid var(--color-primary);
+}
+
+nav.topnav div ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+ul li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: var(--color-primary);
+}
+
+li a {
+    display: block;
+    color: var(--color-primary);
+    text-align: center;
+    text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: var(--color-white);
+}
+
+/* @import "tailwindcss"; */
