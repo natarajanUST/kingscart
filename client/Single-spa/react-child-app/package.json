@@ -2,7 +2,7 @@
   "name": "@kingscart/react-mfe",
   "scripts": {
     "start": "webpack serve",
-    "start:standalone": "webpack serve --env standalone",
+    "start:standalone": "webpack serve --env standalone --port 8080",
     "build": "concurrently npm:build:*",
     "build:webpack": "webpack --mode=production",
     "analyze": "webpack --mode=production --env analyze",
