@@ -6,11 +6,11 @@ const { CancelReason } = require("../../dist/entities/cancelReason.entity");
 module.exports.getOrderDetailsById = async (orderId) => {
      console.log(" DB Before order:", orderId);
      try{
-    const orderRepo = AppDataSource.getRepository(OrderManagement);
-    const order = await orderRepo.findOne({
-        where: { id: orderId },
-        select: ['id', 'custID', 'status', 'amount'],
-        relations: ['cancellation'],
+        const orderRepo = AppDataSource.getRepository(OrderManagement);
+        const order = await orderRepo.findOne({
+            where: { id: orderId },
+            select: ['id', 'custID', 'status', 'amount'],
+            relations: ['cancellation'],
     });
     console.log(" DB returned order:", order);
     return order;
@@ -40,9 +40,10 @@ module.exports.getAllOrderDetails = async () => {
             'cancelReason.cancelReason',
         ])
         .getMany();
-        console.log(" DB returned orders:", orders);
+       // console.log(" DB returned orders:", orders);
         return orders;
     } catch (error) {
+        console.log("Error")
         console.error("Error fetching orders:", error);
         throw error;
     }
@@ -56,7 +57,7 @@ module.exports.createNewOrder = async (orderItem) => {
         return orderRepo;
     } catch (error) {
         console.error("Error fetching orders:", error);
-        throw error;
+        throw Error("Failed to create order. Please try again later.");
     }
 };
 

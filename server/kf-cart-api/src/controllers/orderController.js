@@ -16,7 +16,7 @@ exports.getOrderById= async (req, res, next) => {
 exports.getAllOrders= async (req, res, next) => {
  try {
     const order = await getAllOrderDetails();
-    if (!order) {
+    if (!order || order.length === 0) {
             return res.status(404).json({ message: 'Order not found' });
     }
     res.json(order);
@@ -29,6 +29,9 @@ exports.createOrder = async (req, res, next) => {
   try {
     const orderData = req.body;
     const newOrder = await createNewOrder(orderData);
+    if (!newOrder) {
+      return res.status(400).json({ message: 'Order could not be created' });
+    }
     res.status(201).json(newOrder);
   } catch (err) {
     next(err);
